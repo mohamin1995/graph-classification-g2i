@@ -12,7 +12,7 @@ In functional brain graphs, the nodes describe the regions and the edge weights 
 *Functional Brain Connectivity Network Classification for ASD Screening* 
 
 #### Method: 
-Convert graph classification to image classification.you can see an image obtained from the brain functional network:
+Convert graph classification to image classification based on this [paper](https://arxiv.org/abs/1804.06275).you can see an image obtained from the brain functional network:
 
 ![Brain Functional Network](http://s5.picofile.com/file/8364197492/Capture.PNG)
 
