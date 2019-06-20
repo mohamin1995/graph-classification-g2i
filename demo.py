@@ -1,9 +1,9 @@
 import sys
 import getopt
-from FileUtil import *
-from GraphUtil import *
-from ConfigHandler import Config
-from ClassificationUtil import ClassificationUtil
+from file_util import *
+from graph_util import *
+from config_handler import Config
+from classification_util import ClassificationUtil
 from sklearn.model_selection import LeaveOneOut
 from os import listdir
 from os.path import isfile, join
