@@ -16,9 +16,6 @@ class GraphUtil:
 
     def get_filtered_matrix_fmri(self, n, config):
 
-        # set sparsity to 24
-        # binarization
-
         num_of_max_edges = (len(n) * (len(n) - 1)) / 2
         threshold = 0
 

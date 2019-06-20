@@ -5,6 +5,8 @@ from GraphUtil import *
 from ConfigHandler import Config
 from ClassificationUtil import ClassificationUtil
 from sklearn.model_selection import LeaveOneOut
+from os import listdir
+from os.path import isfile, join
 
 import numpy as np
 
@@ -17,7 +19,10 @@ def main(argv):
 
         fmri_asd_path = config.get('fmri_asd_path')
         fmri_td_path = config.get('fmri_td_path')
-        brain_net_file_format = config.get('brain_net_file_format')
+
+        if fmri_asd_path is None or fmri_td_path is None:
+            print('[error]: Config Not Found or Bad Config')
+            return
 
         g_util = GraphUtil()
         classification_util = ClassificationUtil()
@@ -25,18 +30,32 @@ def main(argv):
         f_vector = []
         label = []
 
-        for k in range(1, 41):
-            n = FileUtil(fmri_asd_path + str(k) + brain_net_file_format).get_brain_matrix_from_file()
-            G = g_util.get_filtered_matrix_fmri(n,config)
+        files = [f for f in listdir(fmri_asd_path) if isfile(join(fmri_asd_path, f))]
 
-            sorted_dic = sorted(G.degree, key=lambda x: x[1], reverse=True)
+        if len(files) == 0:
+            print('[error]: asd directory is empty')
+            return
+
+        for k in range(0, len(files)):
+            n = FileUtil(fmri_asd_path + files[k]).get_brain_matrix_from_file()
+
+            try:
+                g = g_util.get_filtered_matrix_fmri(n, config)
+
+            except Exception:
+                print('[error]: Incorrect matrix structure')
+                return
+
+
+
+            sorted_dic = sorted(g.degree, key=lambda x: x[1], reverse=True)
 
             m = len(sorted_dic)
             new_adj_matrix = np.zeros((m, m), np.uint8)
 
             for i in range(0, m):
                 for j in range(0, m):
-                    if G.has_edge(sorted_dic[i][0], sorted_dic[j][0]):
+                    if g.has_edge(sorted_dic[i][0], sorted_dic[j][0]):
                         new_adj_matrix[i][j] = 255
                     else:
                         new_adj_matrix[i][j] = 0
@@ -46,20 +65,32 @@ def main(argv):
 
             f_vector.append(new_adj_matrix.flatten())
             label.append(1)
-            print('[' + str(k) + '] ASD subject processed successfully...')
+            print('[log]: ' + str(k+1) + ' ASD subject processed successfully...')
 
-        for k in range(1, 38):
-            n = FileUtil(fmri_td_path + str(k) + brain_net_file_format).get_brain_matrix_from_file()
-            G = g_util.get_filtered_matrix_fmri(n,config)
+        files = [f for f in listdir(fmri_td_path) if isfile(join(fmri_td_path, f))]
 
-            sorted_dic = sorted(G.degree, key=lambda x: x[1], reverse=True)
+        if len(files) == 0:
+            print('[error]: td directory is empty')
+            return
+
+        for k in range(0, len(files)):
+            n = FileUtil(fmri_td_path + files[k]).get_brain_matrix_from_file()
+
+            try:
+                g = g_util.get_filtered_matrix_fmri(n, config)
+
+            except Exception:
+                print('[error]: Incorrect matrix structure')
+                return
+
+            sorted_dic = sorted(g.degree, key=lambda x: x[1], reverse=True)
 
             m = len(sorted_dic)
             new_adj_matrix = np.zeros((m, m), np.uint8)
 
             for i in range(0, m):
                 for j in range(0, m):
-                    if G.has_edge(sorted_dic[i][0], sorted_dic[j][0]):
+                    if g.has_edge(sorted_dic[i][0], sorted_dic[j][0]):
                         new_adj_matrix[i][j] = 255
                     else:
                         new_adj_matrix[i][j] = 0
@@ -69,7 +100,9 @@ def main(argv):
 
             f_vector.append(new_adj_matrix.flatten())
             label.append(0)
-            print('[' + str(k) + '] TD subject processed successfully...')
+            print('[log]: ' + str(k+1) + ' TD subject processed successfully...')
+
+        print('[log]: Evaluating...')
 
         x_array = np.array(f_vector)
         y_array = np.array(label)
@@ -90,13 +123,14 @@ def main(argv):
         prec = classification_util.get_precision(ytests, ypreds)
         rec = classification_util.get_recall(ytests, ypreds)
 
-        print('[log]: accuracy = '+str(acc))
-        print('[log]: precision = '+str(prec))
-        print('[log]: recall = '+str(rec))
+        print('.......... [report] ..........')
+        print('+ accuracy = '+str(acc))
+        print('+ precision = '+str(prec))
+        print('+ recall = '+str(rec))
 
     except getopt.GetoptError:
         print('[error]: Invalid Input Args')
-        sys.exit(2)
+        return
 
 
 if __name__ == "__main__":
