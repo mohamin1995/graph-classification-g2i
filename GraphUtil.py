@@ -1,4 +1,3 @@
-from graph_classification_g2i_config.ConfigHandler import Config
 import networkx as nx
 import logging
 
