@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfcfbb51-44d8-4739-ac03-3af385b4465b" name="Default" comment="" />
+    <list default="true" id="bfcfbb51-44d8-4739-ac03-3af385b4465b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_classification_g2i_demo/Demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph_classification_g2i_demo/Demo.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,26 +14,17 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/graph_classification_g2i$Test.coverage" NAME="Test Coverage Results" MODIFIED="1561014897688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph_classification_g2i_test" />
-    <SUITE FILE_PATH="coverage/graph_classification_g2i$Demo.coverage" NAME="Demo Coverage Results" MODIFIED="1561018296122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph_classification_g2i_demo" />
+    <SUITE FILE_PATH="coverage/graph_classification_g2i$Demo.coverage" NAME="Demo Coverage Results" MODIFIED="1561022941745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph_classification_g2i_demo" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Demo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graph_classification_g2i_demo/Demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1241">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassificationUtil.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graph_classification_g2i_classificaion/ClassificationUtil.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="260">
+              <caret line="106" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="106" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,14 +39,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/graph_classification_g2i_config/Config.py" />
         <option value="$PROJECT_DIR$/graph_classification_g2i_config/ConfigHandler.py" />
         <option value="$PROJECT_DIR$/graph_classification_g2i_test/Test.py" />
-        <option value="$PROJECT_DIR$/graph_classification_g2i_util/FileUtil.py" />
         <option value="$PROJECT_DIR$/graph_classification_g2i_classificaion/ClassificationUtil.py" />
+        <option value="$PROJECT_DIR$/graph_classification_g2i_util/FileUtil.py" />
+        <option value="$PROJECT_DIR$/graph_classification_g2i_util/GraphUtil.py" />
         <option value="$PROJECT_DIR$/graph_classification_g2i_demo/Demo.py" />
       </list>
     </option>
@@ -71,6 +69,7 @@
     <option name="width" value="1890" />
     <option name="height" value="930" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -82,31 +81,6 @@
             <path>
               <item name="graph-classification-g2i" type="b2602c69:ProjectViewProjectNode" />
               <item name="graph-classification-g2i" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graph-classification-g2i" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graph-classification-g2i" type="462c0819:PsiDirectoryNode" />
-              <item name="graph_classification_g2i_classificaion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graph-classification-g2i" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graph-classification-g2i" type="462c0819:PsiDirectoryNode" />
-              <item name="graph_classification_g2i_config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graph-classification-g2i" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graph-classification-g2i" type="462c0819:PsiDirectoryNode" />
-              <item name="graph_classification_g2i_demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graph-classification-g2i" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graph-classification-g2i" type="462c0819:PsiDirectoryNode" />
-              <item name="graph_classification_g2i_test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graph-classification-g2i" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graph-classification-g2i" type="462c0819:PsiDirectoryNode" />
-              <item name="graph_classification_g2i_util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,10 +179,10 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32920355" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6637168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32955465" />
@@ -232,19 +206,18 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/graph_classification_g2i_demo/Demo.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graph_classification_g2i_config/ConfigHandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph_classification_g2i_util/FileUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -255,10 +228,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graph_classification_g2i_util/FileUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_classification_g2i_util/GraphUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/graph_classification_g2i_classificaion/ClassificationUtil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="-146">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -267,8 +260,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/graph_classification_g2i_demo/Demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="260">
+          <caret line="106" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="106" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
