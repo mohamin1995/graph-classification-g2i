@@ -28,7 +28,7 @@ Convert graph classification to image classification based on this [paper](https
 #### Run:
 Download ASD and TD FMRI connectivity networks from [UCLA Dataset](http://umcd.humanconnectomeproject.org/) and set paths to those folders in conf.ini file.
 
-command:</br> *python Demo.py -c [path to conf.ini]*
+command:</br> *python demo.py -c [path to conf.ini]*
 
 #### Output:
 .......... [report] ..........
