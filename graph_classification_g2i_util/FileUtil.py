@@ -4,7 +4,7 @@ import logging
 
 class FileUtil:
 
-    def __init__(self,path):
+    def __init__(self, path):
         self.path = path
 
     def get_brain_matrix_from_file(self):
@@ -15,3 +15,5 @@ class FileUtil:
             print('[Log]: Cant find file or cant read file')
             logging.exception(e)
             return None
+
+

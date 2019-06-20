@@ -6,35 +6,34 @@ from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 
 
-
 class ClassificationUtil:
 
-    def get_svm_model(X,Y):
+    def get_svm_model(self, x, y):
         clf = svm.SVC(gamma='auto')
-        clf.fit(X, Y)
+        clf.fit(x, y)
         return clf
 
-    def get_dt_model(X,Y):
+    def get_dt_model(self, x, y):
         clf = tree.DecisionTreeClassifier()
-        clf.fit(X, Y)
+        clf.fit(x, y)
         return clf
 
-    def get_knn_model(X,Y,k):
+    def get_knn_model(self, x, y, k):
 
         neigh = KNeighborsClassifier(n_neighbors=k)
-        neigh.fit(X, Y)
+        neigh.fit(x, y)
         return neigh
 
-    def classify(model,X):
-        return model.predict(X)
+    def classify(self, model, x):
+        return model.predict(x)
 
-    def get_accuracy(y_true, y_pred):
+    def get_accuracy(self, y_true, y_pred):
         return accuracy_score(y_true, y_pred)
 
-    def get_precision(y_true, y_pred):
+    def get_precision(self, y_true, y_pred):
         return precision_score(y_true, y_pred)
 
-    def get_recall(y_true, y_pred):
+    def get_recall(self, y_true, y_pred):
         return recall_score(y_true, y_pred)
 
 

@@ -3,16 +3,15 @@ from graph_classification_g2i_util.FileUtil import *
 from graph_classification_g2i_util.GraphUtil import *
 from graph_classification_g2i_config.ConfigHandler import Config
 from graph_classification_g2i_classificaion.ClassificationUtil import ClassificationUtil
-from sklearn.model_selection import  LeaveOneOut
+from sklearn.model_selection import LeaveOneOut
 
 import numpy as np
 
 
-argv = '-c D:/conf.ini'.split()
-
-def main(args):
+def main(argv):
     try:
         pts, args = getopt.getopt(argv, 'c:')
+
         config = Config(pts[0][1])
 
         fmri_asd_path = config.get('fmri_asd_path')
@@ -20,34 +19,33 @@ def main(args):
         brain_net_file_format = config.get('brain_net_file_format')
 
         g_util = GraphUtil()
+        classification_util = ClassificationUtil()
 
         X = []
         Y = []
-
 
         for k in range(1, 41):
             n = FileUtil(fmri_asd_path + str(k) + brain_net_file_format).get_brain_matrix_from_file()
             G = g_util.get_filtered_matrix_fmri(n,config)
 
-            sortedDic = sorted(G.degree, key=lambda x: x[1], reverse=True)
+            sorted_dic = sorted(G.degree, key=lambda x: x[1], reverse=True)
 
-            m = len(sortedDic)
-            newAdjMatrix = np.zeros((m, m), np.uint8)
+            m = len(sorted_dic)
+            new_adj_matrix = np.zeros((m, m), np.uint8)
 
             for i in range(0, m):
                 for j in range(0, m):
-                    if (G.has_edge(sortedDic[i][0], sortedDic[j][0])):
-                        newAdjMatrix[i][j] = 255
+                    if G.has_edge(sorted_dic[i][0], sorted_dic[j][0]):
+                        new_adj_matrix[i][j] = 255
                     else:
-                        newAdjMatrix[i][j] = 0
+                        new_adj_matrix[i][j] = 0
 
-            #cv2.imshow('im', newAdjMatrix)
-            #cv2.waitKey()
+            '''cv2.imshow('im', newAdjMatrix)
+            cv2.waitKey()'''
 
-            X.append(newAdjMatrix.flatten())
+            X.append(new_adj_matrix.flatten())
             Y.append(1)
             print('[' + str(k) + '] ASD subject processed successfully...')
-
 
         for k in range(1, 38):
             n = FileUtil(fmri_td_path + str(k) + brain_net_file_format).get_brain_matrix_from_file()
@@ -60,50 +58,45 @@ def main(args):
 
             for i in range(0, m):
                 for j in range(0, m):
-                    if (G.has_edge(sortedDic[i][0], sortedDic[j][0])):
+                    if G.has_edge(sortedDic[i][0], sortedDic[j][0]):
                         newAdjMatrix[i][j] = 255
                     else:
                         newAdjMatrix[i][j] = 0
 
-            #cv2.imshow('im', newAdjMatrix)
-            #cv2.waitKey()
+            '''cv2.imshow('im', newAdjMatrix)
+            cv2.waitKey()'''
 
             X.append(newAdjMatrix.flatten())
             Y.append(0)
             print('[' + str(k) + '] TD subject processed successfully...')
 
-
-
-        X_array = np.array(X)
+        x_array = np.array(X)
         y_array = np.array(Y)
-
-
 
         loo = LeaveOneOut()
         ytests = []
         ypreds = []
 
         for train_idx, test_idx in loo.split(X):
-            X_train, X_test = X_array[train_idx], X_array[test_idx]  # requires arrays
+            x_train, x_test = x_array[train_idx], x_array[test_idx]  # requires arrays
             y_train, y_test = y_array[train_idx], y_array[test_idx]
-            model =  ClassificationUtil.get_dt_model(X_train,y_train)
-            y_pred = ClassificationUtil.classify(model,X_test)
+            model = classification_util.get_dt_model(x_train, y_train)
+            y_pred = classification_util.classify(model, x_test)
             ytests += list(y_test)
             ypreds += list(y_pred)
 
-        acc = ClassificationUtil.get_accuracy(ytests, ypreds)
-        prec = ClassificationUtil.get_precision(ytests, ypreds)
-        rec = ClassificationUtil.get_recall(ytests, ypreds)
+        acc = classification_util.get_accuracy(ytests, ypreds)
+        prec = classification_util.get_precision(ytests, ypreds)
+        rec = classification_util.get_recall(ytests, ypreds)
 
-
-        print('accuracy = '+str(acc))
-        print('precision = '+str(prec))
-        print('recall = '+str(rec))
-
+        print('[log]: accuracy = '+str(acc))
+        print('[log]: precision = '+str(prec))
+        print('[log]: recall = '+str(rec))
 
     except getopt.GetoptError:
-           print('Something went wrong!')
-           sys.exit(2)
+        print('[Error]: Invalid Input Args')
+        sys.exit(2)
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])

@@ -1,13 +1,12 @@
 import configparser
 
+
 class Config:
 
     def __init__(self,path):
         self.path = path
 
-
-
-    def get(self,key):
+    def get(self, key):
         config = configparser.ConfigParser()
         config.read(self.path)
 
@@ -15,7 +14,6 @@ class Config:
             value = config['DEFAULT'][key]
             return value
 
-        except:
-
+        except Exception:
             return None
 
