@@ -14,7 +14,7 @@ In functional brain graphs, the nodes describe the regions and the edge weights 
 #### Method: 
 Convert graph classification to image classification based on this [paper](https://arxiv.org/abs/1804.06275).you can see an image obtained from the brain functional network:
 
-![Brain Functional Network](http://s5.picofile.com/file/8364197492/Capture.PNG) ![Brain Functional Network](http://s5.picofile.com/file/8364224400/Capture2.PNG)![Brain Functional Network](http://s5.picofile.com/file/8364224476/Capture3.PNG)
+![Brain Functional Network](http://s5.picofile.com/file/8364197492/Capture.PNG) ![Brain Functional Network](http://s5.picofile.com/file/8364224400/Capture2.PNG) ![Brain Functional Network](http://s5.picofile.com/file/8364224476/Capture3.PNG) ![Brain Functional Network](http://s3.picofile.com/file/8364224784/Capture4.PNG)
 
 #### Dataset:
 [UCLA Dataset](http://umcd.humanconnectomeproject.org/)
@@ -30,8 +30,4 @@ Download ASD and TD FMRI connectivity networks from [UCLA Dataset](http://umcd.h
 
 command:</br> *python demo.py -c [path to conf.ini]*
 
-#### Output:
-.......... [report] ..........
-+ accuracy = 0.7272727272727273
-+ precision = 0.7878787878787878
-+ recall = 0.65
+
