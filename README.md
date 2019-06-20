@@ -14,7 +14,7 @@ In functional brain graphs, the nodes describe the regions and the edge weights 
 #### Method: 
 Convert graph classification to image classification based on this [paper](https://arxiv.org/abs/1804.06275).you can see an image obtained from the brain functional network:
 
-![Brain Functional Network](http://s5.picofile.com/file/8364197492/Capture.PNG)
+![Brain Functional Network](http://s5.picofile.com/file/8364197492/Capture.PNG) ![Brain Functional Network](http://s5.picofile.com/file/8364224400/Capture2.PNG)![Brain Functional Network](http://s5.picofile.com/file/8364224476/Capture3.PNG)
 
 #### Dataset:
 [UCLA Dataset](http://umcd.humanconnectomeproject.org/)
