@@ -46,8 +46,6 @@ def main(argv):
                 print('[error]: Incorrect matrix structure')
                 return
 
-
-
             sorted_dic = sorted(g.degree, key=lambda x: x[1], reverse=True)
 
             m = len(sorted_dic)
@@ -60,7 +58,7 @@ def main(argv):
                     else:
                         new_adj_matrix[i][j] = 0
 
-            '''cv2.imshow('im', newAdjMatrix)
+            '''cv2.imshow('im', new_adj_matrix)
             cv2.waitKey()'''
 
             f_vector.append(new_adj_matrix.flatten())
@@ -95,7 +93,7 @@ def main(argv):
                     else:
                         new_adj_matrix[i][j] = 0
 
-            '''cv2.imshow('im', newAdjMatrix)
+            '''cv2.imshow('im', new_adj_matrix)
             cv2.waitKey()'''
 
             f_vector.append(new_adj_matrix.flatten())
